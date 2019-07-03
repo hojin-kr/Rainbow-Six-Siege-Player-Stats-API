@@ -271,7 +271,7 @@ if (!array_key_exists("players", $idresponse)){
 
 foreach($idresponse["players"] as $value) {
 	$id = $value["profile_id"];
-	$final[$id] = array_merge(($loadProgression == "true" ? getValue($id, $progression) : array()) , $value, array(
+	$final['stats'] = array_merge(($loadProgression == "true" ? getValue($id, $progression) : array()) , $value, array(
 		"nickname" => $data[$id]["nickname"],
 		"platform" => $platform,
 		"rankInfo" => $ranks[$value["rank"]]

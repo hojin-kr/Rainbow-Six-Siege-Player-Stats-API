@@ -51,7 +51,10 @@ function printName($uid)
 	if ($su["error"] != true) {
 		$data[$su['uid']] = array(
 			"profile_id" => $su['uid'],
-			"nickname" => $su['nick']
+			"nickname" => $su['nick'],
+			"error" => [
+				"message" => ""
+			]
 		);
 	} else {
 		$notFound[$uid] = [
@@ -72,7 +75,7 @@ function printID($name)
 			"profile_id" => $su['uid'],
 			"nickname" => $su['nick']
 		);
-	} else {
+		} else {
 		$notFound[$name] = [
 			"nickname" => $name,
 			"error" => [
@@ -80,6 +83,7 @@ function printID($name)
 			]
 		];
 	}
+	
 }
 
 if(isset($_GET["id"])) {
